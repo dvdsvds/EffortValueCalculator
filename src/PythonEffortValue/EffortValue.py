@@ -3,12 +3,9 @@ from tkinter import messagebox
 from tkinter.ttk import Combobox
 
 def enable():
-    # 활성화
     enable = checkstate.get()
     if enable == 1:
-        #버튼누르면 PowerSeries combobox 활성화
         PowerSelect.configure(state='enable')
-        pass
 
 def Apply():
     Doping_result_list = []
