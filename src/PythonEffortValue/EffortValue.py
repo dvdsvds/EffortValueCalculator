@@ -6,7 +6,10 @@ def enable():
     # 활성화
     enable = checkstate.get()
     if enable == 1:
-        PowerSelectEnable.
+        #버튼누르면 PowerSeries combobox 활성화
+        PowerSelect.configure(state='enable')
+        pass
+
 def Apply():
     Doping_result_list = []
     Effort_result_list = []
@@ -98,11 +101,12 @@ PowerFrame = LabelFrame(root, text='Tool', padx=20, pady=3)
 PowerFrame.place(x=14, y=56)
 PowerSeries = ['Weight', 'Bracer', 'Belt', 'Lens', 'Band', 'Anklet']
 
-PowerSelect = Combobox(PowerFrame, height=6, values=PowerSeries, state='disabled', width=7)
+PowerSelect = Combobox(PowerFrame, values=PowerSeries, height=6, state='disabled', width=7)
 PowerSelect.current(0)
 PowerSelect.grid(row=0, column=0)
 
 checkstate = IntVar()
+checkenable = BooleanVar()
 PowerSelectEnable = Checkbutton(PowerFrame, variable=checkstate ,command=enable).grid(row=0, column=1)
 
 MachoBrace = Label(PowerFrame, text='Macho Brace').grid(row=1, column=0)
